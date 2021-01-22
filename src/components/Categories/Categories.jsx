@@ -24,7 +24,6 @@ export default class Categories extends Component {
         })
             .then(
                 item => {
-                    console.log(item.data.data);
                     this.setState({ cat1: [item.data.data[0], item.data.data[2], item.data.data[3], item.data.data[4], item.data.data[5], item.data.data[6]] })
                 }
             ).catch(error => console.log(error));
@@ -40,7 +39,6 @@ export default class Categories extends Component {
         })
             .then(
                 item => {
-                    console.log(item.data.data);
                     this.setState({
                         vid: [
                             item.data.data[0], item.data.data[1]
@@ -158,7 +156,7 @@ export default class Categories extends Component {
     render() {
         return (
             <section className="categories">
-                <NavBarTrends />
+                
                 <h2 className="categories__title">Trending Images/Contributors</h2>
                 <div className="categories__gallery">
                     <div className="categories__gallery__col1">
@@ -175,7 +173,7 @@ export default class Categories extends Component {
 
                     <div className="categories__gallery__col2">
 
-                        <div className="categories__gallery__card">
+                        <div className="categories__gallery__vid-card ">
                             {this.state.vid.map(url => {
                                 return <video
                                     className="categories__gallery__img"
@@ -185,7 +183,7 @@ export default class Categories extends Component {
                             })}
                         </div>
 
-                        <div className="categories__gallery__vid-card">
+                        <div className="categories__gallery__card">
                             {this.state.cat1.map(item => {
                                 return <div className="categories__gallery__card"
                                     key={item.id}>
