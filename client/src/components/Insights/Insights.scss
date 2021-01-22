@@ -1,0 +1,44 @@
+* {
+    font-family: arial;
+}
+
+.container {
+
+}
+
+.insights__box {
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    align-items: center;
+    padding: 10px;
+    &__row {
+        display: flex;
+    }
+
+}
+
+.insight {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    border: 1px solid white;
+    margin: 5px;
+    border-radius: 10px;
+    &__img {
+        width: 75px;
+        height: 85px;
+        padding: 5px;
+        border-radius: 7px;
+    }
+    &__title {
+        margin:0;
+        color: white;
+        text-align: center;
+    }
+    &__box {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
