@@ -1,0 +1,27 @@
+@import '../../styles/_global.scss';
+
+.scroll-container {
+    &__heading {
+        color: #98c1d9;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+    &__wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        margin-bottom: 20px;
+    
+        .card {
+            flex: 0 0 auto;
+            width: 170px;
+            height: 200px;
+            background-color: grey;
+            margin: auto;
+            margin-right: 10px;
+            border-radius: 10px;
+          }
+    
+    }
+
+}

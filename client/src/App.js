@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Insights from './components/Insights/Insights.jsx'
 
 const applicationKey = "1dtGOdhNfXviwBcAMjesOeMbtpK1jmBP";
 const applicationClientSecret = "byTVZU5BIWCPkeKQ";
@@ -8,6 +9,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Insights/>
+      
+      
       </div>
     );
   }

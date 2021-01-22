@@ -2,6 +2,26 @@ import React, {Component} from 'react';
 import './Insights.scss';
 import axios from 'axios';
 import {v4 as uuid} from 'uuid';
+import ScrollPhotos from '../ScrollPhotos/ScrollPhotos';
+import face1 from '../../assets/images/faces/face1.png';
+import face2 from '../../assets/images/faces/face2.png';
+import face3 from '../../assets/images/faces/face3.png';
+import face4 from '../../assets/images/faces/face4.png';
+import die1 from '../../assets/images/tiedie/die1.png';
+import die2 from '../../assets/images/tiedie/die2.png';
+import die3 from '../../assets/images/tiedie/die3.png';
+import iden1 from '../../assets/images/identity/identity1.png';
+import iden2 from '../../assets/images/identity/identity2.png';
+import iden3 from '../../assets/images/identity/identity3.png';
+import iden4 from '../../assets/images/identity/identity4.png';
+import iden5 from '../../assets/images/identity/identity5.png';
+import life1 from '../../assets/images/innerlife/life1.png';
+import life2 from '../../assets/images/innerlife/life2.png';
+import life3 from '../../assets/images/innerlife/life3.png';
+import fan1 from '../../assets/images/fan/fantasy1.png';
+import fan2 from '../../assets/images/fan/fantasy2.png';
+import fan3 from '../../assets/images/fan/fantasy3.png';
+import fan4 from '../../assets/images/fan/fantasy4.png';
 
 const applicationKey = "1dtGOdhNfXviwBcAMjesOeMbtpK1jmBP";
 const applicationClientSecret = "byTVZU5BIWCPkeKQ";
@@ -12,118 +32,54 @@ class Insights extends Component {
     constructor() {
         super();
         this.state = {
-            zoom: [],
-            innerLife: [],
-            exercise: [],
-            greenFoods:[]
+            design: [face1, face2, face3, face4, die1, die2, die3],
+            fantasy: [fan1, fan2, fan3, fan4],
+            identity: [iden1, iden2, iden3, iden4, iden5],
+            innerlife:[life1, life2, life3]
         }
     }
 
-    componentDidMount(){
-        axios
-        .get(`https:/api.shutterstock.com/v2/images/search`, {
-          params: {
-            query: "zoom background",
-          },
-          headers: {
-            Authorization: `Bearer ${token}`,
-          }
-        })
-        .then((res) => {
-          this.setState({
-            zoom: [res.data.data[0], res.data.data[1], res.data.data[2], res.data.data[3]],
-          })
-        })
-
-        axios
-        .get(`https:/api.shutterstock.com/v2/images/search`, {
-          params: {
-            query: "home life",
-          },
-          headers: {
-            Authorization: `Bearer ${token}`,
-          }
-        })
-        .then((res) => {
-          this.setState({
-            innerLife: [res.data.data[4], res.data.data[5], res.data.data[6], res.data.data[7]],
-          })
-        })
-
-        axios
-        .get(`https:/api.shutterstock.com/v2/images/search`, {
-          params: {
-            query: "exercise",
-          },
-          headers: {
-            Authorization: `Bearer ${token}`,
-          }
-        })
-        .then((res) => {
-          this.setState({
-            exercise: [res.data.data[4], res.data.data[5], res.data.data[6], res.data.data[7]],
-          })
-        })
-
-        axios
-        .get(`https:/api.shutterstock.com/v2/images/search`, {
-          params: {
-            query: "green foods",
-          },
-          headers: {
-            Authorization: `Bearer ${token}`,
-          }
-        })
-        .then((res) => {
-          this.setState({
-            greenFoods: [res.data.data[4], res.data.data[5], res.data.data[6], res.data.data[7]],
-          })
-        })
-
-
-    }
     render() {
         return (
             <div className="container">
-                <h2>Insights</h2>
                 <div className="insights__box">
+                <h2>Insights</h2>
                     <div className="insights__box__row">
 
                         <div className="insight">
-                            <p className="insight__title">Zoom Backgrounds</p>
+                            <p className="insight__title">Design</p>
+
                             <div className="insight__box">
-                                {this.state.zoom.map(image=> {
-                                    console.log(image.assets)
-                                    return <img src={image.assets.large_thumb.url} className="insight__img"/>
+                                {this.state.design.map(image=> {
+                                    return <img src={image} className="insight__img"/>
                                 })}
                             </div>
+
                         </div>
+            
                         <div className="insight">
-                            <p className="insight__title">Inner Life</p>
+                            <p className="insight__title">Fantasy</p>
                             <div className="insight__box">
-                                {this.state.innerLife.map(image=> {
-                                    console.log(image.assets)
-                                    return <img src={image.assets.large_thumb.url} className="insight__img"/>
+                                {this.state.fantasy.map(image=> {
+                                    return <img src={image} className="insight__img"/>
                                 })}
                             </div>
                         </div>
                     </div>
                     <div className="insights__box__row">
                         <div className="insight">
-                            <p className="insight__title">Exercise</p>
+                            <p className="insight__title">Identity</p>
                             <div className="insight__box">
-                                {this.state.exercise.map(image=> {
-                                    console.log(image.assets)
-                                    return <img src={image.assets.large_thumb.url} className="insight__img"/>
+                                {this.state.identity.map(image=> {
+                                    return <img src={image} className="insight__img"/>
                                 })}
                             </div>
                         </div>
                         <div className="insight">
-                            <p className="insight__title">Green Foods</p>
+                            <p className="insight__title">Inner Life</p>
                             <div className="insight__box">
-                                {this.state.greenFoods.map(image=> {
-                                    console.log(image.assets)
-                                    return <img src={image.assets.large_thumb.url} className="insight__img"/>
+                                {this.state.innerlife.map(image=> {
+                                    return <img src={image} className="insight__img"/>
                                 })}
                             </div>
                         </div>
@@ -135,3 +91,70 @@ class Insights extends Component {
 }
 
 export default Insights
+
+
+
+
+    // componentDidMount(){
+    //     axios
+    //     .get(`https:/api.shutterstock.com/v2/images/search`, {
+    //       params: {
+    //         query: "zoom background",
+    //       },
+    //       headers: {
+    //         Authorization: `Bearer ${token}`,
+    //       }
+    //     })
+    //     .then((res) => {
+    //       this.setState({
+    //         design: res.data.data,
+    //       })
+    //     })
+
+    //     axios
+    //     .get(`https:/api.shutterstock.com/v2/images/search`, {
+    //       params: {
+    //         query: "home life",
+    //       },
+    //       headers: {
+    //         Authorization: `Bearer ${token}`,
+    //       }
+    //     })
+    //     .then((res) => {
+    //       this.setState({
+    //         photography: res.data.data,
+    //       })
+    //     })
+
+    //     axios
+    //     .get(`https:/api.shutterstock.com/v2/images/search`, {
+    //       params: {
+    //         query: "exercise",
+    //       },
+    //       headers: {
+    //         Authorization: `Bearer ${token}`,
+    //       }
+    //     })
+    //     .then((res) => {
+    //       this.setState({
+    //         music: res.data.data,
+    //       })
+    //     })
+
+    //     axios
+    //     .get(`https:/api.shutterstock.com/v2/images/search`, {
+    //       params: {
+    //         query: "green foods",
+    //       },
+    //       headers: {
+    //         Authorization: `Bearer ${token}`,
+    //       }
+    //     })
+    //     .then((res) => {
+    //       this.setState({
+    //         greenFoods: res.data.data,
+    //       })
+    //     })
+
+
+    // }

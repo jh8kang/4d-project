@@ -1,0 +1,1 @@
+import face1 from '../../assets/images/faces/face1.png';
