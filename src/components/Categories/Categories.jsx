@@ -9,7 +9,6 @@ let apiToken = 'v2/TllFajF1aWlYcUlITk8wN2VZRjQwWmVQUkplazdvMXYvMjkyMTg0Mzk3L2N1c
 export default class Categories extends Component {
     state = {
         cat1: [],
-        cat2: []
     }
 
     componentDidMount() {
@@ -24,10 +23,29 @@ export default class Categories extends Component {
             .then(
                 item => {
                     console.log(item.data.data);
-                    this.setState({ cat1: [item.data.data[0], item.data.data[2], item.data.data[3]] })
+                    this.setState({ cat1: [ item.data.data[0], item.data.data[2], item.data.data[3], item.data.data[4], item.data.data[5], item.data.data[6] ] })
                 }
             ).catch(error => console.log(error));
 
+       
+    }
+
+
+    exercise = (e) => {
+        axios.get(`https:/api.shutterstock.com/v2/images/search`, {
+            params: {
+                query: "exercise",
+            },
+            headers: {
+                Authorization: `Bearer ${apiToken}`,
+            }
+        }).then(img2 => {
+            console.log(img2.data.data);
+            this.setState({ cat1: [ img2.data.data[0], img2.data.data[2], img2.data.data[3], img2.data.data[4], img2.data.data[5], img2.data.data[6] ] })
+        })
+    }    
+
+    farmhouse = (e) => {
         axios.get(`https:/api.shutterstock.com/v2/images/search`, {
             params: {
                 query: "farmhouse",
@@ -37,7 +55,21 @@ export default class Categories extends Component {
             }
         }).then(img2 => {
             console.log(img2.data.data);
-            this.setState({ cat2: [img2.data.data[0], img2.data.data[2], img2.data.data[3]] })
+            this.setState({ cat1: [ img2.data.data[0], img2.data.data[2], img2.data.data[3], img2.data.data[4], img2.data.data[5], img2.data.data[6] ] })
+        })
+    }
+    
+    sport = (e) => {
+        axios.get(`https:/api.shutterstock.com/v2/images/search`, {
+            params: {
+                query: "football",
+            },
+            headers: {
+                Authorization: `Bearer ${apiToken}`,
+            }
+        }).then(img2 => {
+            console.log(img2.data.data);
+            this.setState({ cat1: [ img2.data.data[0], img2.data.data[2], img2.data.data[3], img2.data.data[4], img2.data.data[5], img2.data.data[6] ] })
         })
     }
 
@@ -46,28 +78,30 @@ export default class Categories extends Component {
             <section className="categories">
                 <h2 className="categories__title">Trending Images/Contributors</h2>
                 <div className="categories__gallery">
+                    <div className="categories__gallery__col1">
+                        <p 
+                        onClick={this.exercise}
+                        className="categories__gallery__text">exercise</p>
+                        <p 
+                        onClick={this.farmhouse}
+                        className="categories__gallery__text">vintage</p>
+                        <p
+                        onClick={this.sport}
+                        className="categories__gallery__text">sport</p>
+                    </div>
 
-                    {this.state.cat1.map(item => {
-                        return <div className="categories__gallery__card">
-                            <p className="categories__gallery__text">exercise</p>
-                            <img
-                                className="categories__gallery__img"
-                                src={item.assets.huge_thumb.url}
-                                alt="category" />
-                        </div>
-                    })}
+                    <div className="categories__gallery__col2">
+                        {this.state.cat1.map(item => {
+                            return <div className="categories__gallery__card"
+                            key={item.id}>
+                                <img
+                                    className="categories__gallery__img"
+                                    src={item.assets.huge_thumb.url}
+                                    alt="category" />
+                            </div>
+                        })}
 
-                    {this.state.cat2.map(item => {
-                        return <div className="categories__gallery__card">
-                            <p className="categories__gallery__text">
-                                farmhouse
-                            </p>
-                            <img
-                                className="categories__gallery__img"
-                                src={item.assets.huge_thumb.url}
-                                alt="category" />
-                        </div>
-                    })}
+                    </div>
 
 
                 </div>
