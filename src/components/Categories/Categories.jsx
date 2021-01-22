@@ -179,7 +179,9 @@ export default class Categories extends Component {
                                     className="categories__gallery__img"
                                     key={url.id}
                                     src={url.assets.preview_webm.url}
-                                    controls></video>
+                                    controls 
+                                    autoplay 
+                                    muted></video>
                             })}
                         </div>
 

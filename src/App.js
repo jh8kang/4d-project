@@ -28,6 +28,7 @@ class App extends Component {
 
   }
   render() {
+    document.title="Shutterstock-Contributor"
     return (
       <div className="App">
         <Nav/>
