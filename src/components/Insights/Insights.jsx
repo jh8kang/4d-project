@@ -49,7 +49,7 @@ class Insights extends Component {
                     <div className="insights__box__row">
 
                         <div className="insight">
-                            <p className="insight__title">Design</p>
+                            <p className="insight__title">Top Downloads This Month</p>
 
                             <div className="insight__box">
                                 {this.state.design.map(image=> {
@@ -60,7 +60,7 @@ class Insights extends Component {
                         </div>
             
                         <div className="insight">
-                            <p className="insight__title">Fantasy</p>
+                            <p className="insight__title">Trending Visual Aesthetic</p>
                             <div className="insight__box">
                                 {this.state.fantasy.map(image=> {
                                     return <img key={uuid()} src={image} className="insight__img"/>
@@ -70,7 +70,7 @@ class Insights extends Component {
                     </div>
                     <div className="insights__box__row">
                         <div className="insight">
-                            <p className="insight__title">Identity</p>
+                            <p className="insight__title">Top Downloads By Content</p>
                             <div className="insight__box">
                                 {this.state.identity.map(image=> {
                                     return <img key={uuid()} src={image} className="insight__img"/>
@@ -78,7 +78,7 @@ class Insights extends Component {
                             </div>
                         </div>
                         <div className="insight">
-                            <p className="insight__title">Inner Life</p>
+                            <p className="insight__title">Top Downloads By Attribute</p>
                             <div className="insight__box">
                                 {this.state.innerlife.map(image=> {
                                     return <img key={uuid()} src={image} className="insight__img"/>

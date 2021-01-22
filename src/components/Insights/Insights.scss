@@ -23,11 +23,20 @@
     border: 1px solid black;
     margin: 5px;
     border-radius: 10px;
+    transition: 0.5s;
+    background-color: #dddddd;
+
+    &:hover{
+        transform: scale(2);
+    }
+
     &__img {
         width: 100px;
         height: 100px;
         padding: 5px;
         border-radius: 7px;
+        transition: 0.5s;
+    
     }
     &__title {
         margin:0;
@@ -40,6 +49,7 @@
         flex-wrap: nowrap;
         overflow-x: auto;
         width: 320px;
-        height: 100px;
+        // height: 100px;
+        height: auto;
     }
 }
