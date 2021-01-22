@@ -1,0 +1,129 @@
+@import '../../styles/global';
+@import '../../styles/variables';
+
+.nav{
+
+    &__referral{
+        display: flex;
+        justify-content: center;
+        background-color: $nav-referral-background-color;
+
+        &-div1{
+            display:flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: min-content;
+            width:501px;
+            padding: 20px 0;
+
+            &-text{
+                color: $white;
+                font-size: 14px;
+                line-height: 20px;
+
+                &-span{
+                    font-weight: 700;
+                }
+            }
+
+            &-image{
+                max-width: 14px;
+                max-height: 14px;
+            }
+        }
+
+        &-div2{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width:237px;
+            padding: 10px 0;
+
+            &-image{
+                max-width: 30px;
+                max-height: 30px;
+            }
+
+            &-button{
+                background-color: $nav-button-color;
+                border: 1px solid $nav-button-border-color;
+                border-radius: 4px;
+                color: $white;
+                font-weight: 700;
+                padding: 4px 20px;
+                cursor:pointer;
+            }
+        }
+    }
+
+    &__header{
+        display: flex;
+        justify-content: space-evenly;
+        padding:20px 0;
+
+        &-logo{
+            width:321px;
+            height: 39px;
+        }
+
+        &-image{
+            max-width: 14px;
+            max-height: 14px;
+            padding:0 8px;
+        }
+
+        &-text{
+            color:$nav-dropdown-text-color;
+
+        }
+
+        &-right{
+            display:flex;
+
+            &-div{
+                display:flex;
+                align-items: center;
+                padding:0 8px;
+
+                &-first{
+                    border-right: 1px dotted $nav-user-border-color;
+                }
+            }
+        }
+    }
+
+    &__bar{
+        background-color: $nav-bar-background-color;
+        display:flex;
+        justify-content: space-evenly;
+        height:42px;
+
+        &-div{
+            display:flex;
+            align-items: center;
+
+            &-list{
+                display:flex;
+                align-items: center;
+                height:100%;
+
+                &-section{
+                    display:flex;
+                    align-items: center;
+                    padding: 0 8px;
+                    border-right: 1px solid;
+                    height:inherit;
+                }
+
+                &-item{
+                    list-style-type: none;
+                    color: $white;
+                }
+            }
+
+            &-text{
+                color:$white;
+            }
+        }
+    }
+}
