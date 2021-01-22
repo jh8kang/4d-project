@@ -19,7 +19,7 @@
 
         &__col2{
             display: flex;
-            flex-flow: row wrap;
+            flex-flow: row nowrap;
             justify-content: center;
             align-items: center;
         }
@@ -39,6 +39,7 @@
             margin: 16px 0;
             background-color: $nav-button-color;
             padding: 16px;
+            border-radius: 25px;
             
         }
 
