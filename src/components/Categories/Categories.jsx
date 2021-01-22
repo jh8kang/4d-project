@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Categories.scss';
+import NavBarTrends from '../NavBarTrends/NavBarTrends';
 
 let apiKey = 'NYEj1uiiXqIHNO07eYF40ZePRJek7o1v';
 let apiScecret = 'ajIvWpyFx1e6emkW';
@@ -156,9 +157,8 @@ export default class Categories extends Component {
 
     render() {
         return (
-
-
             <section className="categories">
+                <NavBarTrends />
                 <h2 className="categories__title">Trending Images/Contributors</h2>
                 <div className="categories__gallery">
                     <div className="categories__gallery__col1">
@@ -174,7 +174,18 @@ export default class Categories extends Component {
                     </div>
 
                     <div className="categories__gallery__col2">
+
                         <div className="categories__gallery__card">
+                            {this.state.vid.map(url => {
+                                return <video
+                                    className="categories__gallery__img"
+                                    key={url.id}
+                                    src={url.assets.preview_webm.url}
+                                    controls></video>
+                            })}
+                        </div>
+
+                        <div className="categories__gallery__vid-card">
                             {this.state.cat1.map(item => {
                                 return <div className="categories__gallery__card"
                                     key={item.id}>
@@ -187,19 +198,7 @@ export default class Categories extends Component {
                             })}
                         </div>
 
-
-                        <div className="categories__gallery__card">
-                            {this.state.vid.map(url => {
-                                return <video
-                                className="categories__gallery__img"
-                                    src={url.assets.preview_webm.url}
-                                    controls></video>
-                            })}
-                        </div>
-
                     </div>
-
-
                 </div>
             </section>
         )
