@@ -1,0 +1,45 @@
+@import '../../styles/_global.scss';
+
+* {
+    font-family: arial;
+}
+
+.insights__box {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    padding: 10px;
+    &__row {
+        display: flex;
+    }
+
+}
+
+.insight {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: 5px;
+    border-radius: 10px;
+    &__img {
+        width: 100px;
+        height: 100px;
+        padding: 5px;
+        border-radius: 7px;
+    }
+    &__title {
+        margin:0;
+        color: black;
+        text-align: center;
+    }
+    &__box {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        width: 320px;
+        height: 100px;
+    }
+}

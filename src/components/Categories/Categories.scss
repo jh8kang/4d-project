@@ -1,0 +1,68 @@
+@import '../../styles/variables';
+
+.categories{
+
+    padding: 16px;
+
+    &__title{
+        font-size: 1.5rem;
+        color: $black;
+    }
+
+    &__gallery{
+        display: flex;
+        flex-flow: row nowrap;
+
+        &__col1{
+            width: 30%;
+        }
+
+        &__col2{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            align-items: flex-start;
+        }
+
+        &__card{
+            width: 40%;
+            margin: 8px;
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        &__vid-card{
+            width: 30%;
+            margin: 8px;
+        }
+
+        &__text{
+            color: white;
+            text-transform: uppercase;
+            font-size: large;
+            font-weight: 700;
+            margin: 16px 0;
+            background-color: $nav-button-color;
+            padding: 16px;
+            border-radius: 25px;
+
+            &:hover{
+                background-color: $nav-button-border-color;
+            }
+            
+        }
+
+        &__img{
+            width: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+
+            &:hover{
+                transform: scale(2);
+            }
+            
+        }
+    }
+
+
+}
